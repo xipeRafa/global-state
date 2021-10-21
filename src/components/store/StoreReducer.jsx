@@ -23,6 +23,6 @@ const storeReducer = (state, action) =>{
       }
 }
 
-
-export {initialStore, types}
-export default storeReducer
+export {types} //imported in MyComponent 
+export {initialStore} //imported in StoreProvider
+export default storeReducer //imported in StoreProvider

@@ -14,5 +14,5 @@ const StoreProvider = ({children}) =>{
       )
 }
 
-export {StoreContext}
-export default StoreProvider
+export {StoreContext} //imported in MyComponent to use: [store, storeDispatch] 
+export default StoreProvider //import in App.js
