@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import storeReducer, { initialStore } from "./StoreReducer";
 
 const StoreContext = createContext()
@@ -14,5 +14,9 @@ const StoreProvider = ({children}) =>{
       )
 }
 
+const useStore = () => useContext(StoreContext)[0]
+const useStoreDispatch = () => useContext(StoreContext)[1]
+
 export {StoreContext} //imported in MyComponent to use: [store, storeDispatch] 
+export {useStore, useStoreDispatch} //imported in MyComponent, const { user, products } = useStore();
 export default StoreProvider //import in App.js

@@ -10,13 +10,12 @@ const initialStore = {
       products: [{ id: 1, title: 'Product #1' }, { id: 2, title: 'Product #2' }]
 }
   
-
 const storeReducer = (state, action) =>{
       switch (action.type) {
             case types.authLogout: return {...state, user: null}
             case types.authLogin: return {...state, user: action.payload}
-            case types.productDeleteAll:return {...state, products: []}
-            case types.productChange:return {...state, products: [{ id: 3, title: 'Product #3' }]}
+            case types.productDeleteAll: return {...state, products: []}
+            case types.productChange: return {...state, products: [{ id: 3, title: 'Product #3' }]}
 
             default: return state          
         

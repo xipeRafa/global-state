@@ -1,11 +1,14 @@
-import { useContext } from "react"
-import { StoreContext} from "./store/StoreProvider"
+/* import { useContext } from "react"
+import { StoreContext} from "./store/StoreProvider" */
+import { useStoreDispatch, useStore } from "./store/StoreProvider";
 import { types } from "./store/StoreReducer"
 
 
 const MyComponent = () => {
-      const [store, storeDispatch] = useContext(StoreContext)
-      const {user, products}=store
+      /* const [store, storeDispatch] = useContext(StoreContext) */
+      const { user, products } = useStore();
+      const storeDispatch = useStoreDispatch();
+      /* const {user, products}=store */
       return (
             <div>
                   <h1>My Component</h1>
@@ -13,7 +16,7 @@ const MyComponent = () => {
                   <button onClick={()=> storeDispatch({type: types.authLogout })}>
                         logout
                   </button>
-                  <button onClick={()=> storeDispatch({type: types.authLogin, payload:{id:1, name:'luiss'} })}>
+                  <button onClick={()=> storeDispatch({type: types.authLogin, payload:{id:1, name:'meme'} })}>
                         login
                   </button>
 
